@@ -1,0 +1,122 @@
+/* our css */
+
+/* Reset
+-------------------------------------------------------------- */
+*:focus{outline:none;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}button,input,legend,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}table{border-collapse:collapse;border-spacing:0; }sup,sub{vertical-align:baseline; }html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,textarea,caption,table,tbody,tfoot,thead,tr,th,td{font-family:inherit;font-size:inherit;}
+
+html { 
+	background: #F6F6F6;
+}
+
+body { font: 12px/1.4em "helvetica", sans-serif; }
+
+a { color: #00AECF; text-decoration: none; }
+
+.single-zm-quote-tracker .post-title {
+	display: inline;
+	font-size: 12px;
+	font-family: arial;
+	font-weight: normal;
+	margin-bottom: 5px;
+	}
+
+.single-zm-quote-tracker .post-content {	
+	font-size: 32px;
+	font-style: italic;
+	font-family: times new roman;
+	line-height: 1em;
+	margin: 20px 0 10px;
+	}
+
+.single-zm-quote-tracker .post-excerpt {
+
+}
+
+.container-zm-quote-tracker { 		
+	}
+
+.single-zm-quote-tracker .next-previous-container {}
+.single-zm-quote-tracker .utility-zm-quote-tracker {}
+
+.sidebar-zm-quote-tracker { 	
+	float: left;
+	width: 200px;
+	}
+
+.sidebar-zm-quote-tracker .zm-base-title { 
+	font-weight: bold;
+	text-transform: capitalize;
+	}
+
+.sidebar-zm-quote-tracker ul { 
+	list-style-type: none;
+	margin-bottom: 20px; 
+	}
+
+.sidebar-zm-quote-tracker ul li { }
+.sidebar-zm-quote-tracker ul li a { }
+.sidebar-zm-quote-tracker .zm-base-count {
+	background: #ddd;
+	border-radius: 4px;
+	color: #fff;
+	font-weight: bold;
+	margin-left: 5px;
+	padding: 2px 5px;
+}
+
+.main-zm-quote-tracker {	
+	float: left;
+	width: auto;
+	}
+
+
+.topbar,
+header { display: none; }
+
+blockquote {
+	position: relative;
+	}
+
+blockquote p:before {
+	font-size: 84px;
+	content: "“";
+	color: #EEE;
+	color: rgba(0, 0, 0, 0.1);
+	position: absolute;
+	left: -35px;
+	top: 10px;
+	z-index: 1;
+	}
+
+blockquote p:after {
+	font-size: 84px;
+	/* content: "”"; */
+	color: #eee; /* fallback */
+	color: rgba(0,0,0,0.1);
+	margin: 30px 0 0 0;
+	float: right;
+	z-index: 1;
+	}
+
+.next-container:before {
+	content: "Next";
+	font-weight: bold;
+	margin-right: 5px;	
+	}
+
+.previous-container:before {
+	content: "Previous";
+	font-weight: bold;
+	margin-right: 5px;
+	}
+
+.utility-zm-quote-tracker strong {
+	text-transform: capitalize;
+	}
+
+.single-zm-quote-tracker {
+	float: left;
+	margin: 20px;
+}
+
+.m-dash { display: block; margin: 10px 0; }
