@@ -44,7 +44,7 @@ $cpt_obj = get_post_types( array( 'name' => $cpt), 'objects' );
 
         </div>        
 
-        <div class="well">
+        <div class="button-pane">
             <div id="publishing-action">
                 <div class="left">                    
                     <input id="save_exit_submit_bmx_race_schedule" class="button" type="submit" value="Save &amp; Close" accesskey="p" name="save_exit" data-template="<?php print plugin_dir_path( __FILE__ ); ?>archive-table.php" data-post_type="<?php print $cpt; ?>"/>            

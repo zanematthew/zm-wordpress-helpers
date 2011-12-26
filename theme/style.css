@@ -40,7 +40,7 @@ a { color: #00AECF; text-decoration: none; }
 
 .sidebar-zm-quote-tracker { 	
 	float: left;
-	width: 200px;
+	width: 250px;
 	}
 
 .sidebar-zm-quote-tracker .zm-base-title { 
@@ -62,8 +62,9 @@ a { color: #00AECF; text-decoration: none; }
 	border-radius: 4px;
 	color: #fff;
 	font-weight: bold;
+	font-size: 11px;
 	margin-left: 5px;
-	padding: 2px 5px;
+	padding: 0 2px;
 }
 
 .main-zm-quote-tracker {	
@@ -165,8 +166,12 @@ select,
 label {
 	font-weight: bold;
 	display: block;
+	text-transform: capitalize;
 }
 
+.form-wrapper {
+	padding: 10px;
+}
 .row {
 	clear: both;
 	float: left;
@@ -179,6 +184,8 @@ fieldset {
 	float: left;
 	margin-right: 10px;
 }
+
+.button-pane {}
 
 /*= Dialog
 		-------------------------------------------------------------- */
