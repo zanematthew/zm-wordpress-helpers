@@ -21,10 +21,10 @@ a { color: #00AECF; text-decoration: none; }
 	}
 
 .single-zm-quote-tracker .post-content {	
-	font-size: 32px;
+	font-size: 26px;
 	font-style: italic;
 	font-family: times new roman;
-	line-height: 1em;
+	line-height: 1.3em;
 	margin: 20px 0 10px;
 	}
 
@@ -53,7 +53,9 @@ a { color: #00AECF; text-decoration: none; }
 	margin-bottom: 20px; 
 	}
 
-.sidebar-zm-quote-tracker ul li { }
+.sidebar-zm-quote-tracker ul li:first-child { margin-bottom: 0; }
+.sidebar-zm-quote-tracker ul li { margin-bottom: 10px; }
+
 .sidebar-zm-quote-tracker ul li a { }
 .sidebar-zm-quote-tracker .zm-base-count {
 	background: #ddd;
@@ -66,7 +68,7 @@ a { color: #00AECF; text-decoration: none; }
 
 .main-zm-quote-tracker {	
 	float: left;
-	width: auto;
+	width: 800px;
 	}
 
 
@@ -76,6 +78,8 @@ header { display: none; }
 blockquote {
 	position: relative;
 	}
+
+blockquote p { margin-bottom: 15px; }
 
 blockquote p:before {
 	font-size: 84px;

@@ -44,15 +44,11 @@ Browse by
                 <?php the_content(); ?>
             </blockquote>
         </div>
-        <?php if ( get_the_excerpt() ) : ?>
+        <?php if ( get_the_excerpt() ) : ?>            
             <div class="post-excerpt">                         
-                <p><?php 
-                $lame = get_the_excerpt(); 
-                $lame = explode("<", $lame );                            
-                print $lame[0];
-                ?></p>
+                <p><?php the_excerpt(); ?></p>
             </div>
-        <?php endif; ?>        
+        <?php endif; ?>
         <span class="m-dash">&mdash;</span>
         <div class="utility-zm-quote-tracker">        
             <strong>Title </strong><h1 class="title post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
