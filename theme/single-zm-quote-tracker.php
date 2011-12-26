@@ -24,8 +24,16 @@ $cpt_obj = get_post_types( array( 'name' => $post_type), 'objects' );
 <div class="container-zm-quote-tracker">
     <div class="single-zm-quote-tracker">
         <div class="sidebar-zm-quote-tracker">
+            <ul>
+                <li>Admin Menu</li>
+                <li><?php do_action('create_quote'); ?></li>
+                <?php if ( current_user_can( 'administrator' ) ) : ?>
+                    <li><a href="<?php bloginfo('wpurl');?>/wp-admin" title="Click to go to WordPress admin">WordPress Admin</a></li>
+                <?php endif; ?>                                                 
+                <li>&nbsp;</li>
+                <li><a href="<?php echo wp_logout_url( 'http://' . $_SERVER['HTTP_HOST'] . '/quotes' ); ?>" title="Click here to Log out">Logout</a></li>
+            </ul>
             Browse by
-            <span class="m-dash">&mdash;</span>    
             <?php foreach ( $cpt_obj[ $post_type ]->taxonomies as $tax ) : ?>
                 <?php zm_base_list_terms( array('taxonomy' => $tax, 'label' => '', 'extra_class' => 'my-twipsy', 'link' => 'anchor', 'post_type' => $post_type ) ); ?>
             <?php endforeach; ?>
