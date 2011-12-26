@@ -24,23 +24,12 @@ a { color: #00AECF; text-decoration: none; }
 	font-size: 26px;
 	font-style: italic;
 	font-family: times new roman;
-	line-height: 1.3em;
-	margin: 20px 0 10px;
+	line-height: 1.3em;	
 	}
-
-.single-zm-quote-tracker .post-excerpt {
-
-}
-
-.container-zm-quote-tracker { 		
-	}
-
-.single-zm-quote-tracker .next-previous-container {}
-.single-zm-quote-tracker .utility-zm-quote-tracker {}
 
 .sidebar-zm-quote-tracker { 	
-	float: left;
-	width: 250px;
+	float: left;	
+	width: 250px;	
 	}
 
 .sidebar-zm-quote-tracker .zm-base-title { 
@@ -65,6 +54,11 @@ a { color: #00AECF; text-decoration: none; }
 	font-size: 11px;
 	margin-left: 5px;
 	padding: 0 2px;
+}
+
+.container-zm-quote-tracker { 
+	float: left;
+	padding: 20px;
 }
 
 .main-zm-quote-tracker {	
@@ -121,7 +115,6 @@ blockquote p:after {
 
 .single-zm-quote-tracker {
 	float: left;
-	margin: 20px;
 }
 
 .m-dash { display: block; margin: 10px 0; }
@@ -204,3 +197,23 @@ fieldset {
 		    
 		.ui-draggable .ui-dialog-titlebar { background: -moz-linear-gradient(center top , #E3E3E3, #F9F9F9) repeat scroll 0 0 transparent; border-bottom: 1px solid #E3E3E3; }
 		/* -------------------------------------------------------------- */
+
+.taxonomy-zm-quote-tracker {}
+.taxonomy-zm-quote-tracker .post-title { margin-bottom: 5px; }
+.taxonomy-zm-quote-tracker .hentry {
+	background: #fff;
+	float: left;
+	height: 100px;
+	margin: 0 1px 1px;
+	padding: 10px;
+	width: 100px;
+}		
+.taxonomy-zm-quote-tracker .hentry:first-child {
+	height: 220px;
+	width: 222px;
+}
+.taxonomy-zm-quote-tracker .utility-zm-quote-tracker { font-size: 11px; color: #ccc; }
+.taxonomy-zm-quote-tracker .utility-zm-quote-tracker a { color: #ccc; }
+
+.taxonomy-zm-quote-tracker .utility-zm-quote-tracker .tag-container:before {	
+	}

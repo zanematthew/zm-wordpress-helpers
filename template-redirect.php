@@ -83,8 +83,18 @@ function quote_tracker_redirect( $params=array() ) {
             wp_die('Unable to load any template');
         }
         die();                
-    } 
-    else {
+    } elseif ( is_tax() ) {        
+        $custom_template  = plugin_dir_path( __FILE__ ) . 'theme/taxonomy-' . $current_post_type . '.php';
+        
+        if ( file_exists( $custom_template ) ) {                           
+            load_template( $custom_template );
+        } else {
+            print '<p>Default: ' . $default_template . '</p>';
+            print '<p>Custom: ' . $custom_template . '</p>';                
+            wp_die('Unable to load any template');
+        }
+
+    } else {
         die('for now');
     }
 }
