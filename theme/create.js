@@ -53,11 +53,6 @@ jQuery(document).ready(function( $ ){
         });		
 	});
 
- $(".chzn-select").chosen(); 
- $(".chzn-select-deselect").chosen({
-	 allow_single_deselect:true
-});
-
 	$('body').ajaxSuccess(function(){		
 		if ( jQuery().chosen ) {
 			$(".chzn-select").chosen(); 
@@ -67,6 +62,21 @@ jQuery(document).ready(function( $ ){
 		} else {
 			console.log( 'Chosen not loaded' );
 		}
-	}); // End 'ajaxSuccess'	
+	}); // End 'ajaxSuccess'		
 
-});
+    function submit_boo( payload ){        
+    	console.log( payload );
+        $.ajax({            
+            data: "action=add_quote&" + payload,
+            success: function( msg ) {                                 
+                if ( msg.length ) {
+                    $( '#default_message_target' ).fadeIn().html( msg ).delay(1000).fadeOut();                    
+                }
+            }
+        }); 
+    }   
+   
+   	$( '#save_add_submit_zm_quote_tracker' ).live( 'click', function(){                
+        submit_boo( $( '#create_zm_quote_tracker_form' ).serialize() );        
+    }); 	
+}); // End 'doc ready'

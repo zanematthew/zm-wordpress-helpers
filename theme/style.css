@@ -124,3 +124,76 @@ blockquote p:after {
 }
 
 .m-dash { display: block; margin: 10px 0; }
+
+input, textarea {
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+input:focus, textarea:focus {
+  outline: 0;
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+input,
+textarea,
+select,
+.uneditable-input {
+  display: inline-block;
+  width: 210px;
+  
+  padding: 4px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #808080;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.xxlarge { width: 90%; }
+.zm-base-title,
+label {
+	font-weight: bold;
+	display: block;
+}
+
+.row {
+	clear: both;
+	float: left;
+	width: 90%;
+	margin-bottom: 10px;
+}
+
+fieldset {
+	border: 0;
+	float: left;
+	margin-right: 10px;
+}
+
+/*= Dialog
+		-------------------------------------------------------------- */
+		.ui-dialog { background: #fff; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 0 30px #666; float: left; }
+		.ui-dialog .form-container { background: none; padding: 0; }
+
+		.ui-dialog-buttonpane,
+		.ui-dialog .button-container { border-top: 1px solid #E3E3E3; float: left; margin: 20px 0 0 0; padding: 10px 0 10px 10px; width: 100%; }
+
+		.ui-dialog-title { color: #333; float: left; font: bold 16px/1 sans-serif; margin: 0; padding: 10px; }
+		.ui-dialog-title em { color: #888; }
+		.ui-widget-overlay { 
+		    background: -moz-radial-gradient(rgba(127, 127, 127, 0.5), rgba(127, 127, 127, 0.5) 35%, rgba(0, 0, 0, 0.7)); 
+		    background: -webkit-radial-gradient(rgba(127, 127, 127, 0.5), rgba(127, 127, 127, 0.5) 35%, rgba(0, 0, 0, 0.7)); 
+		    }
+		    
+		.ui-draggable .ui-dialog-titlebar { background: -moz-linear-gradient(center top , #E3E3E3, #F9F9F9) repeat scroll 0 0 transparent; border-bottom: 1px solid #E3E3E3; }
+		/* -------------------------------------------------------------- */
