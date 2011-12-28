@@ -20,6 +20,8 @@ else
  * Once we have our post_type, we get the object to have access to our taxonomies
  */
 $cpt_obj = get_post_types( array( 'name' => $post_type), 'objects' );
+$obj_tax = get_taxonomies( array( 'object_type' => array($post_type) ), $output='objects' );
+
 ?>
 <div class="container-zm-quote-tracker">
     <div class="single-zm-quote-tracker">
@@ -69,9 +71,10 @@ $cpt_obj = get_post_types( array( 'name' => $post_type), 'objects' );
                     <?php foreach ( $cpt_obj[$post_type]->taxonomies as $tax ) : ?>
                         <?php $term = zm_base_get_the_term_list( array( 'post_id' => $id , 'post_type' => $post_type, 'taxonomy' => $tax, 'link' => 'anchor') ); ?>
                         <?php if ( ! is_null( $term ) ) : ?>
-                            <div class="<?php print $tax; ?>-container"><strong><?php print $tax; ?></strong>        
-                                <?php print $term; ?>            
-                            </div>
+                        <div class="<?php print $tax; ?>-container">
+                            <strong><?php print $obj_tax[$tax]->labels->singular_name; ?></strong>
+                            <?php print $term; ?>            
+                        </div>
                         <?php endif; ?>
                     <?php endforeach; ?>
                 </div> 

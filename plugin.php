@@ -182,5 +182,7 @@ $_GLOBALS[ $_zm_cpt ]->taxonomy = array(
     array(
         'name' => 'zm-quote-tag',
         'post_type' => $_zm_cpt,
+        'menu_name' => 'Quote Tag',
+        'singular_name' => 'Quote Tag'
         )                                
 ); 
