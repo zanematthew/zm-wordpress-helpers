@@ -79,4 +79,9 @@ jQuery(document).ready(function( $ ){
    	$( '#save_add_submit_zm_quote_tracker' ).live( 'click', function(){                
         submit_boo( $( '#create_zm_quote_tracker_form' ).serialize() );        
     }); 	
+
+    $( '#exit' ).live('click', function(){
+        console.log('clicked');
+        $('#create_zm_quote_tracker_dialog').dialog('close');
+    });
 }); // End 'doc ready'

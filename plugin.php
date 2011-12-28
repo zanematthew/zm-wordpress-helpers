@@ -147,7 +147,7 @@ $_GLOBALS[ $_zm_cpt ]->post_type = array(
         'name' => 'Quote',
         'type' => $_zm_cpt,
         'rewrite' => array( 
-            'slug' => 'quote'
+            'slug' => 'quotes'
             ),
         'supports' => array(
             'title',            
