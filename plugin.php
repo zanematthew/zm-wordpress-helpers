@@ -23,7 +23,9 @@ require_once plugin_dir_path( __FILE__ ) . 'functions.php';
 require_once plugin_dir_path( __FILE__ ) . 'template-redirect.php';
 require_once plugin_dir_path( __FILE__ ) . 'functions-create.php';
 require_once plugin_dir_path( __FILE__ ) . 'functions-ajax.php';
+require_once plugin_dir_path( __FILE__ ) . 'library/inplace-edit/functions.php';
 
+do_action( 'inplace-edit' );
 /**
  * Our class
  */

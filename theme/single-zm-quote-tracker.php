@@ -67,7 +67,7 @@ $obj_tax = get_taxonomies( array( 'object_type' => array($post_type) ), $output=
                 <span class="m-dash">&mdash;</span>
 
                 <div class="utility-zm-quote-tracker">        
-                    <strong>Title </strong><h1 class="title post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+                    <strong>Title </strong><h1 class="title post-title"><?php the_title(); ?></h1>
                     <?php foreach ( $cpt_obj[$post_type]->taxonomies as $tax ) : ?>
                         <?php $term = zm_base_get_the_term_list( array( 'post_id' => $id , 'post_type' => $post_type, 'taxonomy' => $tax, 'link' => 'anchor') ); ?>
                         <?php if ( ! is_null( $term ) ) : ?>
@@ -82,6 +82,9 @@ $obj_tax = get_taxonomies( array( 'object_type' => array($post_type) ), $output=
 
             </div>
             <!-- End 'post_class' -->
+            <script type="text/javascript">
+            _post_id = <?php print $post->ID; ?>
+            </script>
         <?php endwhile; ?>
         </div>
         <!-- End 'main' -->
