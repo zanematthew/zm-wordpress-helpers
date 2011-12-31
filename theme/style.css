@@ -10,8 +10,22 @@ html {
 
 body { font: 12px/1.4em "helvetica", sans-serif; }
 
-a { color: #00AECF; text-decoration: none; }
+a { 
+	color: #00AECF; 
+	text-decoration: none; 
+	/*
+	-webkit-transition: color 0.5s linear;  
+	-moz-transition: color 0.5s linear;  
+	*/
+	}
 
+/*
+a:hover {
+	color: #004653;
+	-webkit-transition: color 0.5s linear;  
+	-moz-transition: color 0.5s linear;  
+}
+*/
 .single-zm-quote-tracker .post-title {
 	display: inline;
 	font-size: 12px;
@@ -207,13 +221,33 @@ fieldset {
 	margin: 0 1px 1px;
 	padding: 10px;
 	width: 100px;
-}		
+	-webkit-transition: color 0.5s linear;  
+	-moz-transition: color 0.5s linear;  
+	}		
+
+.taxonomy-zm-quote-tracker .hentry:hover .utility-zm-quote-tracker,
+.taxonomy-zm-quote-tracker .hentry:hover .utility-zm-quote-tracker a { 
+
+	}
+
+.taxonomy-zm-quote-tracker .hentry:hover { 
+	background-color: #FFC;
+	-webkit-transition: color 0.5s linear;  
+	-moz-transition: color 0.5s linear;  	
+	}
+
 .taxonomy-zm-quote-tracker .hentry:first-child {
 	height: 220px;
 	width: 222px;
 }
 .taxonomy-zm-quote-tracker .utility-zm-quote-tracker { font-size: 11px; color: #ccc; }
-.taxonomy-zm-quote-tracker .utility-zm-quote-tracker a { color: #ccc; }
+.taxonomy-zm-quote-tracker .utility-zm-quote-tracker a { 
+	color: #ccc; 
+	font-family: lucida grande;
+	font-size: 10px;
+	text-transform: capitalize;
+	letter-spacing: 0.1em;
+	}
 
 .taxonomy-zm-quote-tracker .utility-zm-quote-tracker .tag-container:before {	
 	}
