@@ -18,7 +18,11 @@ function quote_tracker_redirect( $params=array() ) {
     $custom_template  = plugin_dir_path( __FILE__ ) . 'theme/single-' . $current_post_type . '.php';
 
     wp_enqueue_style( 'quote-tracker-base', plugin_dir_url( __FILE__ ) . 'theme/style.css', '', 'all' );
-/*
+
+    if ( ! is_admin() ) {
+        wp_enqueue_script( 'zm-cpt-hash', plugin_dir_url( __FILE__ ) . 'library/hash.js', array('jquery' ), '0.0.1' );
+    }
+        /*
 
     if ( ! is_admin() ) {
         // Regsiter our jQuery plugins and extra JavaScript
