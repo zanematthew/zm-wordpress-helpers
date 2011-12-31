@@ -1,7 +1,7 @@
 <?php
 if ( is_admin() ) {
-    ini_set('display_errors', 'on');
-    error_reporting( E_ALL );
+//    ini_set('display_errors', 'on');
+//    error_reporting( E_ALL );
 }
 
 /**
@@ -19,7 +19,6 @@ if ( is_admin() ) {
  */
 
 require_once dirname( plugin_dir_path( __FILE__ ) ) . '/zm-cpt/plugin.php';
-require_once plugin_dir_path( __FILE__ ) . 'functions.php';
 require_once plugin_dir_path( __FILE__ ) . 'template-redirect.php';
 require_once plugin_dir_path( __FILE__ ) . 'functions-create.php';
 require_once plugin_dir_path( __FILE__ ) . 'functions-ajax.php';

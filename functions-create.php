@@ -91,8 +91,7 @@ function add_quote(){
                 }
             }                
         }            
-    }                
-    
+    }                    
 	die();
 }
 add_action( 'wp_ajax_add_quote', 'add_quote' );
@@ -121,6 +120,3 @@ function create_zm_quote_tracker( ) {
     print '<a href="javascript:void(0);" id="create_zm_quote_tracker_handle" data-template="' . plugin_dir_path( __FILE__ ) . 'theme/create.php" data-post_type="'. $cpt .'">Add a Quote!</a>';
 }
 add_action( 'create_quote', 'create_zm_quote_tracker', 10 );
-
-
- 

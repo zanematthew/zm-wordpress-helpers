@@ -34,6 +34,7 @@ zm_cpt_json_feed( $post_type='zm-quote-tracker', $taxonomies=$cpt_obj[ $post_typ
                 <li>&nbsp;</li>
                 <li><a href="<?php echo wp_logout_url( 'http://' . $_SERVER['HTTP_HOST'] . '/quotes' ); ?>" title="Click here to Log out">Logout</a></li>
             </ul>
+            <span class="m-dash">&mdash;</span>                 
             Browse by
             <?php foreach ( $cpt_obj[ $post_type ]->taxonomies as $tax ) : ?>
                 <?php zm_base_list_terms( array('taxonomy' => $tax, 'label' => '', 'extra_class' => 'my-twipsy', 'link' => 'anchor', 'post_type' => $post_type ) ); ?>
