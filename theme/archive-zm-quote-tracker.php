@@ -55,7 +55,8 @@ zm_cpt_json_feed( $post_type='zm-quote-tracker', $taxonomies=$cpt_obj[ $post_typ
         </div>
         <!-- End 'sidebar' -->
 
-        <div class="main-zm-quote-tracker">        	        
+        <div class="main-zm-quote-tracker">        	                    
+            <div id="filter_control_target" style="display: none;"></div>
             <div id="zm_ajax_the_loop">
             <div class="hentry">                
                 <h1>Quotes</h1>
