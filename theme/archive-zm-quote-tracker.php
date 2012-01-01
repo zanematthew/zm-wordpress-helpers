@@ -25,6 +25,20 @@ zm_cpt_json_feed( $post_type='zm-quote-tracker', $taxonomies=$cpt_obj[ $post_typ
 <div class="container-zm-quote-tracker">
     <div class="taxonomy-zm-quote-tracker">
         <div class="sidebar-zm-quote-tracker">
+
+<div class="zm-default-form-container">
+    <form action="javascript://" id="filter_task_form">        
+        <div class="form-wrapper">
+            <input type="hidden" value="task" name="post_type" />
+            <?php
+            foreach( $cpt_obj[ $post_type ]->taxonomies as $taxonomy ) {
+                zm_base_build_input( array( 'taxonomy' => $taxonomy, 'prepend' => $taxonomy.'-', 'type' => 'checkbox' ) );
+            }
+            ?>
+        </div>
+    </form>
+</div>
+
             <ul>
                 <li>Admin Menu</li>
                 <li><?php do_action('create_quote'); ?></li>

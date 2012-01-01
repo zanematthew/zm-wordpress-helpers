@@ -291,3 +291,7 @@ label {
 	letter-spacing: 0.1em;
 	}
 /* ---------------------------------------------------------- */
+
+.zm-default-form-container fieldset { float: left; clear: both; width: 100%; margin-bottom: 20px; }
+.zm-default-form-container label { float: left; width: 100%; font-weight: normal; }
+.zm-default-form-container input[type="checkbox"] { float: left; width: auto; }

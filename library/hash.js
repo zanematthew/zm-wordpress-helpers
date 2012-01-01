@@ -72,10 +72,10 @@ function filterRows() {
     changeHash();
 }
 
-function build_filters() {
+function build_filters( _form_selector ) {
     var searchClasses = '';
-    _filters = {};
-    jQuery( "#filter_task_form select" ).each(function() { 
+    _filters = {};     
+    jQuery( _form_selector + " select" ).each(function() { 
         if(jQuery(this).val()) {
 //            searchClasses += "." + jQuery(this).val();
             if(typeof _filters[this.name] !== "object") {
@@ -84,7 +84,7 @@ function build_filters() {
             _filters[this.name].push(jQuery('option:selected', this).attr("data-value"));
         }
     });
-    jQuery( "#filter_task_form input[type=checkbox]").each(function() {
+    jQuery( _form_selector + " input[type=checkbox]").each(function() {
         if(jQuery(this).prop('checked')) {
             if(typeof _filters[this.name] !== "object") {
                 _filters[this.name] = [];
