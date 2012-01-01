@@ -3,7 +3,7 @@ var _filters = {};
 
 // @todo if we have a hash store it to filter on later
 function addHash( hash ) {
-    console.log( hash );
+        
     if( typeof arguments[1] !== "undefined" && arguments[1] == true) {
         _filters = {};
     }
@@ -46,19 +46,21 @@ function filterRows() {
 
     for( var i in _data ) {
         showhide = true;
-        for(var j in _filters) {
+        for ( var j in _filters ) {
             if ( jQuery.inArray(_data[i][j], _filters[j]) === -1) {
                 showhide = false;
             }
         }
-        if(showhide) {
+
+        if ( showhide ) {
             noResults = false;
             jQuery( ".post-" + i ).fadeIn();
         } else {
             jQuery( ".post-" + i ).fadeOut();
         }
     }
-    if(noResults) {
+
+    if ( noResults ) {
         if( jQuery("#archive_table tbody tr.no-results").length ) {
             jQuery("#archive_table tbody tr.no-results").fadeIn();
         } else {
@@ -66,16 +68,17 @@ function filterRows() {
             jQuery("#archive_table tbody")
                 .append('<tr class="no-results"><td colspan="' + colspan + '"><em>No Tasks match the selected criteria.</em></td></tr>');
         }
-    } else {
+    } else {        
         jQuery("#archive_table tbody tr.no-results").fadeOut();
     }
     changeHash();
 }
 
-function build_filters( _form_selector ) {
+function build_filters( _filter_selector ) {
     var searchClasses = '';
     _filters = {};     
-    jQuery( _form_selector + " select" ).each(function() { 
+
+    jQuery( _filter_selector + " select" ).each(function() { 
         if(jQuery(this).val()) {
 //            searchClasses += "." + jQuery(this).val();
             if(typeof _filters[this.name] !== "object") {
@@ -84,7 +87,8 @@ function build_filters( _form_selector ) {
             _filters[this.name].push(jQuery('option:selected', this).attr("data-value"));
         }
     });
-    jQuery( _form_selector + " input[type=checkbox]").each(function() {
+
+    jQuery( _filter_selector + " input[type=checkbox]").each(function() {
         if(jQuery(this).prop('checked')) {
             if(typeof _filters[this.name] !== "object") {
                 _filters[this.name] = [];
