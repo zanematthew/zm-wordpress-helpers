@@ -17,11 +17,9 @@ function quote_tracker_redirect( $params=array() ) {
     $current_post_type = $post->post_type;
     $custom_template  = plugin_dir_path( __FILE__ ) . 'theme/single-' . $current_post_type . '.php';
 
-    wp_enqueue_style( 'quote-tracker-base', plugin_dir_url( __FILE__ ) . 'theme/style.css', '', 'all' );
-
     if ( ! is_admin() ) {
-        wp_enqueue_script( 'zm-cpt-hash', plugin_dir_url( __FILE__ ) . 'library/hash.js', array('jquery' ), '0.0.1' );
-        wp_enqueue_script( 'quote-script', plugin_dir_url( __FILE__ ) . 'theme/script.js', array('jquery', 'zm-cpt-hash' ), '0.0.1' );        
+        wp_enqueue_style( 'quote-tracker-base', plugin_dir_url( __FILE__ ) . 'theme/style.css', '', 'all' ); 
+        wp_enqueue_script( 'quote-script', plugin_dir_url( __FILE__ ) . 'theme/script.js', array('jquery' ), '0.0.1' );        
     }
         /*
 

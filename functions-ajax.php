@@ -1,7 +1,6 @@
 <?php
 
 if ( ! is_admin() ) {
-    wp_enqueue_script( 'zm-cpt-hash', plugin_dir_url( __FILE__ ) . 'library/hash.js', array('jquery' ), '0.0.1' );
     wp_enqueue_script( 'zm-ajax-load', plugin_dir_url( __FILE__ ) . 'library/wp-ajax-load.js', array('jquery' ), '0.0.1' );
     wp_enqueue_style( 'zm-ajax-css', plugin_dir_url( __FILE__ ) . 'library/wp-ajax-load.css' );
 }
