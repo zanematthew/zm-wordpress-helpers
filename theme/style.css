@@ -116,8 +116,10 @@ a:hover {
 	}
 
 .sidebar-zm-quote-tracker .zm-base-title { 
+	float: left;
 	font-weight: bold;
 	text-transform: capitalize;
+	margin-bottom: 5px;
 	}
 
 .sidebar-zm-quote-tracker ul { 
@@ -145,6 +147,30 @@ a:hover {
 
 .single-zm-quote-tracker {
 	float: left;
+	}
+
+.sidebar-zm-quote-tracker .form-wrapper {
+	padding: 0; 
+	}
+
+.sidebar-zm-quote-tracker fieldset { 
+	float: left; 
+	clear: both; 
+	width: 100%; 
+	}
+
+.sidebar-zm-quote-tracker label { 
+	float: left; 
+	font-weight: normal; 	
+	margin-bottom: 5px;
+	margin-top: 2px;
+	width: 100%; 	
+	}
+
+.sidebar-zm-quote-tracker input[type="checkbox"] { 
+	float: left; 
+	margin-right: 5px;
+	width: auto; 
 	}
 /* ----------------------------------------------------------- */
 
@@ -291,7 +317,3 @@ label {
 	letter-spacing: 0.1em;
 	}
 /* ---------------------------------------------------------- */
-
-.zm-default-form-container fieldset { float: left; clear: both; width: 100%; margin-bottom: 20px; }
-.zm-default-form-container label { float: left; width: 100%; font-weight: normal; }
-.zm-default-form-container input[type="checkbox"] { float: left; width: auto; }

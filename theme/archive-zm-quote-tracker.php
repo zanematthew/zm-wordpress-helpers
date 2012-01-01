@@ -24,21 +24,8 @@ zm_cpt_json_feed( $post_type='zm-quote-tracker', $taxonomies=$cpt_obj[ $post_typ
 ?>
 <div class="container-zm-quote-tracker">
     <div class="taxonomy-zm-quote-tracker">
+        <!-- Start 'sidebar' -->
         <div class="sidebar-zm-quote-tracker">
-
-<div class="zm-default-form-container">
-    <form action="javascript://" id="filter_task_form">        
-        <div class="form-wrapper">
-            <input type="hidden" value="task" name="post_type" />
-            <?php
-            foreach( $cpt_obj[ $post_type ]->taxonomies as $taxonomy ) {
-                zm_base_build_input( array( 'taxonomy' => $taxonomy, 'prepend' => $taxonomy.'-', 'type' => 'checkbox' ) );
-            }
-            ?>
-        </div>
-    </form>
-</div>
-
             <ul>
                 <li>Admin Menu</li>
                 <li><?php do_action('create_quote'); ?></li>
@@ -48,11 +35,23 @@ zm_cpt_json_feed( $post_type='zm-quote-tracker', $taxonomies=$cpt_obj[ $post_typ
                 <li>&nbsp;</li>
                 <li><a href="<?php echo wp_logout_url( 'http://' . $_SERVER['HTTP_HOST'] . '/quotes' ); ?>" title="Click here to Log out">Logout</a></li>
             </ul>
-            <span class="m-dash">&mdash;</span>                 
-            Browse by
-            <?php foreach ( $cpt_obj[ $post_type ]->taxonomies as $tax ) : ?>
-                <?php zm_base_list_terms( array('taxonomy' => $tax, 'label' => '', 'extra_class' => 'my-twipsy', 'link' => 'anchor', 'post_type' => $post_type ) ); ?>
-            <?php endforeach; ?>
+            <span class="m-dash">&mdash;</span>                             
+            <div class="zm-default-form-container">
+                <form action="javascript://" id="filter_task_form">        
+                    <div class="form-wrapper">
+                        <input type="hidden" value="task" name="post_type" />
+                        <?php zm_base_build_input( array( 'taxonomy' => 'book', 'prepend' => 'book-', 'type' => 'checkbox' ) ); ?>                
+                        <span class="m-dash">&mdash;</span> 
+                        <?php zm_base_build_input( array( 'taxonomy' => 'movie', 'prepend' => 'movie-', 'type' => 'checkbox' ) ); ?>                
+                        <span class="m-dash">&mdash;</span> 
+                        <?php zm_base_build_input( array( 'taxonomy' => 'song', 'prepend' => 'song-', 'type' => 'checkbox' ) ); ?>                
+                        <span class="m-dash">&mdash;</span> 
+                        <?php zm_base_build_input( array( 'taxonomy' => 'people', 'prepend' => 'people-', 'type' => 'checkbox' ) ); ?>                
+                        <span class="m-dash">&mdash;</span> 
+                        <?php zm_base_build_input( array( 'taxonomy' => 'zm-quote-tag', 'prepend' => 'zm-quote-tag-', 'type' => 'checkbox' ) ); ?>                
+                    </div>
+                </form>
+            </div>
         </div>
         <!-- End 'sidebar' -->
 
