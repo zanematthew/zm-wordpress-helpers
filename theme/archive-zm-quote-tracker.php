@@ -48,7 +48,7 @@ zm_cpt_json_feed( $post_type='zm-quote-tracker', $taxonomies=$cpt_obj[ $post_typ
                         <span class="m-dash">&mdash;</span> 
                         <?php zm_base_build_input( array( 'taxonomy' => 'people', 'prepend' => 'people-', 'type' => 'checkbox' ) ); ?>                
                         <span class="m-dash">&mdash;</span> 
-                        <?php zm_base_build_input( array( 'taxonomy' => 'zm-quote-tag', 'prepend' => 'zm-quote-tag-', 'type' => 'checkbox' ) ); ?>                
+                        <?php zm_base_build_input( array( 'taxonomy' => 'zm-quote-tag', 'prepend' => 'zm-quote-tag-', 'type' => 'checkbox', 'label' => 'Quote Tag' ) ); ?>                
                     </div>
                 </form>
             </div>
