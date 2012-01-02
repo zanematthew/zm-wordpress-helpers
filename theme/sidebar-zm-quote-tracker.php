@@ -1,14 +1,14 @@
 <!-- Start 'sidebar' -->
 <div class="sidebar-zm-quote-tracker">
+    <?php if ( current_user_can( 'administrator' ) ) : ?>
     <ul>
         <li><strong>Admin Menu</strong></li>
-        <?php if ( current_user_can( 'administrator' ) ) : ?>
             <li><?php do_action('create_quote'); ?></li>    
             <li><a href="<?php bloginfo('wpurl');?>/wp-admin" title="Click to go to WordPress admin" class="admin">WordPress Admin</a></li>        
         <li><a href="<?php echo wp_logout_url( 'http://' . $_SERVER['HTTP_HOST'] . '/quotes' ); ?>" title="Click here to Log out" class="logout">Logout</a></li>
-        <?php endif; ?>                                                                 
     </ul>
     <span class="m-dash">&mdash;</span>        
+    <?php endif; ?>                                                                 
     <a href="<?php bloginfo('url');?>/quote-archive/#/">View All</a>
     <span class="m-dash">&mdash;</span>        
     <div id="search_navigation" class="search-navigation-container">
