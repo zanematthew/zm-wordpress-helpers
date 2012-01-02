@@ -363,3 +363,38 @@ label {
 	letter-spacing: 0.1em;
 	}
 /* ---------------------------------------------------------- */
+
+
+.default-update-container { margin-top: 20px; }
+.default-update-container fieldset { margin: 0 15px 15px 0; }
+.default-update-container select[name="book"] { width: 170px; }
+.default-update-container select[name="movie"] { width: 170px; }
+.default-update-container select[name="song"] { width: 170px; }
+.default-update-container select[name="people"] { width: 170px; }
+.default-update-container .my-tags { margin-top: 20px; width: 740px; }
+.default-update-container .button-container {
+	float: left;
+	clear: both;
+	margin-top: 20px; 
+}
+
+.update {
+background: -moz-linear-gradient(center top , #F9F9F9, #E3E3E3);
+background: -webkit-linear-gradient(top , #F9F9F9, #E3E3E3);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F9F9F9), color-stop(100%, #E3E3E3));
+background: linear-gradient( #F9F9F9, #E3E3E3);
+-o-transition: border-top-color 0.218s,border-right-color 0.218s,border-bottom-color 0.218s,border-left-color .218s;
+-moz-transition: border-top-color 0.218s,border-right-color 0.218s,border-bottom-color 0.218s,border-left-color .218s;
+-webkit-transition: border-top-color 0.218s,border-right-color 0.218s,border-bottom-color 0.218s,border-left-color .218s;
+border: 1px solid;
+border-radius: 5px;
+border-left: 1px solid #BBB;
+cursor: pointer;
+color: green;
+font: bold 12px/1 "Helvetica Neue", sans-serif, arial;
+margin-right: 20px;
+padding: 5px 10px;
+width: auto;
+border-color: #CCC #BBB #A0A0A0;
+}
+.exit { color: red; }

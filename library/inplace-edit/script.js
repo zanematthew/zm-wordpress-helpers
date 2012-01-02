@@ -38,5 +38,17 @@ jQuery(document).ready(function( $ ){
             }
         });    
     }); // End 'update'
-        
+    
+    if ( jQuery().chosen )
+        $("select").chosen();         
+
+    $('#default_utility_udpate_form').live('submit', function(){        
+        $.ajax({
+            data: "action=zm_inplace_edit_update_utility&" + $( this ).serialize(),
+            success: function( msg ) {
+                console.log( msg );
+            }
+        });
+    });        
+
 });

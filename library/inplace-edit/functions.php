@@ -22,8 +22,6 @@ add_action( 'inplace-edit', 'zm_inplace_edit' );
  * @todo add check_ajax_refere()
  */
 function zm_inplace_edit_update_post( $post ) {    
-print_r( $post );
-print_r( $_POST );	
     // @todo add check_ajax_referer
     if ( !is_user_logged_in() )
         return false;
@@ -47,3 +45,35 @@ print_r( $_POST );
 } // postTypeUpdate
 add_action( 'wp_ajax_zm_inplace_edit_update_post', 'zm_inplace_edit_update_post' );
 add_action( 'wp_ajax_nopriv_zm_inplace_edit_update_post', 'zm_inplace_edit_update_post' );
+
+
+// @todo ajax refer
+function zm_inplace_edit_update_utility(){
+
+    if ( !is_user_logged_in() )
+        return false;
+    
+    $post_id = $_POST['PostID'];
+    
+    unset( $_POST['action'] );
+    unset( $_POST['PostID'] );
+    
+    $taxonomies = $_POST;
+    
+    // prep our data    
+    foreach( $taxonomies as $taxonomy => $term ){
+        if ( is_array( $term ) ) {            
+            $taxonomies[ $taxonomy ] = implode( ",", $term );
+        }
+    }
+
+    foreach ( $taxonomies as $taxonomy => $term ) {
+        if ( $term ) {            
+            wp_set_post_terms( $post_id, $term, $taxonomy );    
+        }
+    }
+
+    die();
+}
+add_action( 'wp_ajax_zm_inplace_edit_update_utility', 'zm_inplace_edit_update_utility' );
+add_action( 'wp_ajax_nopriv_zm_inplace_edit_update_utility', 'zm_inplace_edit_update_utility' );
