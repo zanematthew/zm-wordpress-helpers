@@ -93,7 +93,7 @@ a:hover {
 }
 */
 
-/* Single
+/*= Single
 -------------------------------------------------------------- */
 .single-zm-quote-tracker .post-title {
 	display: inline;
@@ -109,22 +109,38 @@ a:hover {
 	font-family: times new roman;
 	line-height: 1.3em;	
 	}
+/* ----------------------------------------------------------- */
 
+
+/*= Sidebar
+-------------------------------------------------------------- */
 .sidebar-zm-quote-tracker { 	
 	float: left;	
 	width: 250px;	
 	}
 
+.sidebar-zm-quote-tracker .search-navigation-container em {
+	margin-right: 5px;
+	}
+
+.sidebar-zm-quote-tracker .search-navigation-container .current {
+	font-weight: bold;
+	}
+
+.sidebar-zm-quote-tracker .bar {
+	margin: 0 10px;
+	} 
+	
 .sidebar-zm-quote-tracker .zm-base-title { 
 	float: left;
 	font-weight: bold;
 	text-transform: capitalize;
 	margin-bottom: 5px;
+	width: 100%;
 	}
 
 .sidebar-zm-quote-tracker ul { 
 	list-style-type: none;
-	margin-bottom: 20px; 
 	}
 
 .sidebar-zm-quote-tracker ul li:first-child { 

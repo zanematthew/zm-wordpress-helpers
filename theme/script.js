@@ -51,4 +51,25 @@ jQuery(document).ready(function( $ ){
 			build_filters( _filter_selector='#filter_control_target' );
 		});
 	});
+
+	/**
+	 * Toggle our advanced search
+	 *
+	 * We prevent the default action of clicking the href
+	 * assign instance of this. Toggle class for current 
+	 * item in navigation show or hide the search sidebar.
+	 */
+	$('#search_navigation').on('click', 'a', function( event ){		
+		event.preventDefault();
+
+		_this = $(this);		
+		
+		$('#search_navigation a').each(function(){
+			parentID = '#' + $(this).parent().attr('id');
+			$( parentID + ' a' ).removeClass('current');			
+			$( _this ).toggleClass('current', true);
+		});			
+
+		$('.search-by').toggle('fast');
+	});
 });
