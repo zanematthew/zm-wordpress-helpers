@@ -18,15 +18,22 @@ if ( is_admin() ) {
  * License: GP
  */
 
+// CPT Library
 require_once dirname( plugin_dir_path( __FILE__ ) ) . '/zm-cpt/plugin.php';
+
+// Unique Templates for this Plugin
 require_once plugin_dir_path( __FILE__ ) . 'template-redirect.php';
 require_once plugin_dir_path( __FILE__ ) . 'functions-create.php';
-require_once plugin_dir_path( __FILE__ ) . 'functions-ajax.php';
+
+// Libraries/Actions
+require_once plugin_dir_path( __FILE__ ) . 'library/zm-ajax/functions.php';
 require_once plugin_dir_path( __FILE__ ) . 'library/inplace-edit/functions.php';
 require_once plugin_dir_path( __FILE__ ) . 'library/hash/functions.php';
 
 do_action( 'inplace-edit' );
 do_action( 'hash-filter' );
+do_action( 'zm-ajax' );
+
 /**
  * Our class
  */

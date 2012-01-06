@@ -51,4 +51,9 @@ jQuery(document).ready(function( $ ){
         });
     });        
 
+    $('#default_utility_edit_handle').on('click', function( event ){
+        event.preventDefault();        
+        $('#utility-container').toggle();
+        $('#default_utility_update_container').toggle();
+    });
 });

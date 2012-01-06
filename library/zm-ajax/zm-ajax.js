@@ -3,9 +3,45 @@
  */
  jQuery( document ).ready(function( $ ){
     
+    // @todo templating still handled via php, consider js templating?
+    window.temp_load = function( params ) {
+
+        params.action = "loadTemplate";        
+        console.log( 'show loading icon in target' );
+        $.ajax({
+            data: params,
+            success: function( msg ){                
+                $( params.target_div ).fadeIn().html( msg );
+                if(typeof params.callback === "function") {
+                    params.callback();
+                }
+            },
+            error: function( xhr ){
+                console.log( params );
+                console.log( 'XHR Error: ' + xhr );
+            }
+        });
+    }
+    
+        
     function close_post_container(){
         $('.zm-ajax-post-container').fadeOut();
     }
+
+    function zm_ajax_load_comments() {
+        if ( ! $( '.comments-container' ).length ) {
+            
+            $( '#task_comment_target .tt_loading').show();
+
+            temp_load({
+                "target_div": "#task_comment_target",
+                "template": $( '#task_comment_handle' ).attr( 'data-template' ),
+                "post_id": $( '#task_comment_handle' ).attr( 'data-post_id' )
+            });
+        } else {
+            console.log( 'no comments container to load' );
+        }
+    }    
 
     /**
      * Default ajax setup
@@ -19,12 +55,14 @@
         console.log( 'make sure ajaxurl is defiend!' );
     }
     
-$(document).keydown(function(e) {
-    // ESCAPE key pressed
-    if (e.keyCode == 27) {
-        close_post_container();
-    }
-});    
+    // Close post_container when users presses esc key
+    $(document).keydown(function(e) {
+        // ESCAPE key pressed
+        if (e.keyCode == 27) {
+            close_post_container();
+        }
+    });    
+
     $('.zm-ajax-post-container .close').live('click', function( event ){
         event.preventDefault();
         close_post_container();
@@ -98,16 +136,32 @@ $(document).keydown(function(e) {
             });
         } // End 'check for entry utility'
 
-        if ( !$( '.comments-container' ).length ) {
-            
-            $( '#task_comment_target .tt_loading').show();
-
-            temp_load({
-                "target_div": "#task_comment_target",
-                "template": $( '#task_comment_handle' ).attr( 'data-template' ),
-                "post_id": $( '#task_comment_handle' ).attr( 'data-post_id' )
-            });
-        }
+        zm_ajax_load_comments();
 
     }); // End 'window.load'    
+
+    /**
+     * Submit new comment, note comments are loaded via ajax
+     */
+    $( '#zm_ajax_add_comment' ).live( 'submit', function(){
+        data = {
+            action: "zm_ajax_add_comment",
+            post_id: _post_id,
+            comment: $( '#comment' ).val()
+        };
+
+        $.ajax({
+            data: data, 
+            success: function( msg ){                                
+            temp_load({
+                "target_div": "#zm_ajax_comment_target",
+                "template": $( '#zm_ajax_comment_handle' ).attr( 'data-template' ),
+                "post_id": $( '#zm_ajax_comment_handle' ).attr( 'data-post_id' )
+            });
+            },
+            error: function( xhr ) {
+                console.log( 'XHR Error: ' + xhr );
+            }
+        });
+    }); // End 'comment'    
 }); // End 'document'    

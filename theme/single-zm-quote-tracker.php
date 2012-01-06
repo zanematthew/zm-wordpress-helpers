@@ -51,7 +51,11 @@ $obj_tax = get_taxonomies( array( 'object_type' => array($post_type) ), $output=
                 
                 <span class="m-dash">&mdash;</span>
 
-                <div class="utility-zm-quote-tracker">        
+                <?php if ( is_user_logged_in() ) : ?>            
+                    <a href="#" id="default_utility_edit_handle">Edit</a>
+                <?php endif; ?>
+
+                <div class="utility-zm-quote-tracker" id="utility-container">        
                     <strong>Title </strong><h1 class="title post-title"><?php the_title(); ?></h1>
                     <?php foreach ( $cpt_obj[$post_type]->taxonomies as $tax ) : ?>
                         <?php $term = zm_base_get_the_term_list( array( 'post_id' => $id , 'post_type' => $post_type, 'taxonomy' => $tax, 'link' => 'anchor') ); ?>
@@ -63,8 +67,8 @@ $obj_tax = get_taxonomies( array( 'object_type' => array($post_type) ), $output=
                         <?php endif; ?>
                     <?php endforeach; ?>
                 </div> 
-                <?php if ( is_user_logged_in() ) : ?>
-                    <div class="zm-default-form-container default-update-container" id="default_utility_update_container">
+                <?php if ( is_user_logged_in() ) : ?>            
+                    <div class="zm-default-form-container default-update-container" id="default_utility_update_container" style="display: none;">
                         <a name="update"></a>
                         <form action="javascript://" method="POST" id="default_utility_udpate_form">
                             <input type="hidden" name="PostID" id="post_id" value="<?php echo $post->ID; ?>" />
@@ -86,7 +90,14 @@ $obj_tax = get_taxonomies( array( 'object_type' => array($post_type) ), $output=
                 <?php endif; ?>                
                 <!-- End 'utility' -->
 
-            </div>
+<!-- Start 'Comment' -->
+<div id="zm_ajax_comment_handle" data-post_id="<?php echo $id; ?>" data-template="<?php print plugin_dir_path(__FILE__);?>comment.php">
+    <div id="zm_ajax_comment_target">
+        <div class="zm_ajax_loading" style="display: none;"></div>
+    </div>    
+</div>
+<!-- End 'Comment' -->
+            
             <!-- End 'post_class' -->
             <script type="text/javascript">
             _post_id = <?php print $post->ID; ?>
