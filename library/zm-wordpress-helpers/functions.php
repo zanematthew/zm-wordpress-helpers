@@ -907,3 +907,4 @@ function zm_cpt_json_feed( $post_type, $taxonomies=array(), $status=null ) {
     print '<script type="text/javascript">var _data = ' . json_encode( $types ) . '</script>';
 }
 endif;
+// Sample chnage
