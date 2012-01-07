@@ -29,6 +29,7 @@ require_once plugin_dir_path( __FILE__ ) . 'functions-create.php';
 require_once plugin_dir_path( __FILE__ ) . 'library/zm-ajax/functions.php';
 require_once plugin_dir_path( __FILE__ ) . 'library/inplace-edit/functions.php';
 require_once plugin_dir_path( __FILE__ ) . 'library/hash/functions.php';
+require_once plugin_dir_path( __FILE__ ) . 'library/zm-wordpress-helpers/functions.php';
 
 do_action( 'inplace-edit' );
 do_action( 'hash-filter' );
